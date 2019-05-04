@@ -2,7 +2,7 @@ package br.com.task.fw;
 
 import java.security.MessageDigest;
 
-public class Criptografia {
+public class Encrypt {
 
     public static String sha1(String input) throws Exception {
         MessageDigest mDigest = MessageDigest.getInstance("SHA1");
