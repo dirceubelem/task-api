@@ -1,11 +1,11 @@
 drop table user;
 
 create table user (
-	id varchar(40) not null,
+	id varchar(22) not null,
     name varchar(50) not null,
     email varchar(100) not null,
     password varchar(40) not null,
-    token varchar(40),
+    token varchar(22),
     active boolean not null default true,
     createdat datetime not null
 );

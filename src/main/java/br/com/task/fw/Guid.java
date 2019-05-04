@@ -21,7 +21,7 @@ public class Guid {
     }
 
     public static String getString() {
-        return guidFactory.getGuidString().toUpperCase();
+        return guidFactory.getGuidString().toLowerCase();
     }
 
     protected String getGuidString() {
