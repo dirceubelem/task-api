@@ -3,8 +3,18 @@ plugins {
     id 'war'
 }
 
+war {
+    archiveName = 'br.com.task.api.war'
+}
+
 group 'br.com.task.api'
-version '1.0-SNAPSHOT'
+version '1.0'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+compileJava.options.encoding = 'UTF-8'
 
 sourceCompatibility = 1.8
 
