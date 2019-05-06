@@ -1,4 +1,4 @@
---drop table users;
+drop table account;
 
 create table account (
      id varchar(22) not null,
