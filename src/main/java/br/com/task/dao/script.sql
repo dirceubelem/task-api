@@ -10,5 +10,4 @@ create table account (
      createdat timestamp not null
 );
 
-
 insert into account values ('5C7M3JEI468RO1D9VVV2U2', 'Dirceu Belem', 'dirceubelem@gmail.com', '2e6f9b0d5885b6010f9167787445617f553a735f', null, true, now());
