@@ -7,7 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf2f451d-777b-4995-a8f1-23817b188744" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/compile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/compile.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/api/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/api/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceVersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceVersion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/bo/BOUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/bo/BOAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/dao/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/dao/script.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/to/TOUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/to/TOAccount.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -42,7 +49,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compile.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -52,10 +59,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOAccount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/dao/script.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="9" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -80,16 +99,16 @@
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/fw/Criptografia.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/fw/DateTime.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/fw/Data.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/bo/BOUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/fw/Cryptograph.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceVersion.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/api/ApplicationConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/task/dao/script.sql" />
         <option value="$PROJECT_DIR$/compile.sh" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceVersion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/task/dao/script.sql" />
       </list>
     </option>
   </component>
@@ -151,7 +170,34 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="task" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="br.com.task.api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="task-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="task" type="462c0819:PsiDirectoryNode" />
+              <item name="bo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="br.com.task.api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="task-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="task" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="br.com.task.api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="task-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="task" type="462c0819:PsiDirectoryNode" />
+              <item name="to" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -382,12 +428,12 @@
       <workItem from="1556929154779" duration="441000" />
       <workItem from="1557149102955" duration="14000" />
       <workItem from="1557159434742" duration="2504000" />
-      <workItem from="1557168652681" duration="1046000" />
+      <workItem from="1557168652681" duration="1273000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7134000" />
+    <option name="totallyTimeSpent" value="7361000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -436,7 +482,7 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/to/TOUser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/to/TOAccount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret lean-forward="true" />
@@ -496,20 +542,10 @@
     </entry>
     <entry file="jar://C:/ProgramData/Android/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/ab3976d4574c48d22dc1abf6a9e8bd0fdf928223/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServletResponse.java" />
     <entry file="jar://C:/ProgramData/Android/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.25.1/f0c3629e116829bb892a86d1fabfbc3e18550b7c/jersey-server-2.25.1-sources.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOUser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOAccount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -532,7 +568,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/fw/Cryptograph.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceUser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceAccount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
           <caret line="25" column="17" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="17" />
@@ -566,17 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceVersion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#192#193#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/api/ApplicationConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -587,17 +612,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/dao/script.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/compile.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="115" selection-start-line="4" selection-start-column="115" selection-end-line="4" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceVersion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#164#165#0" expanded="true" />
+            <element signature="e#192#193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/dao/script.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="9" selection-end-column="33" />
         </state>
       </provider>
     </entry>

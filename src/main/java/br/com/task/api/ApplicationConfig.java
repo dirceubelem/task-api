@@ -25,7 +25,7 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
 
-        resources.add(ServiceUser.class);
+        resources.add(ServiceAccount.class);
         resources.add(ServiceVersion.class);
 
     }

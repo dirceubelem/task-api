@@ -1,7 +1,7 @@
 package br.com.task.api;
 
-import br.com.task.bo.BOUser;
-import br.com.task.to.TOUser;
+import br.com.task.bo.BOAccount;
+import br.com.task.to.TOAccount;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,7 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 
 @Path("user")
-public class ServiceUser {
+public class ServiceAccount {
 
     @Context
     protected HttpServletResponse response;
@@ -23,9 +23,9 @@ public class ServiceUser {
     @Path("auth")
     @Consumes("application/json;charset=utf-8")
     @Produces("application/json;charset=utf-8")
-    public TOUser auth(TOUser u) throws Exception {
+    public TOAccount auth(TOAccount u) throws Exception {
 
-        TOUser t = BOUser.auth(u);
+        TOAccount t = BOAccount.auth(u);
 
         if(t == null){
             response.sendError(HttpServletResponse.SC_FORBIDDEN);

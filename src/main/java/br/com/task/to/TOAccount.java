@@ -2,7 +2,7 @@ package br.com.task.to;
 
 import java.sql.Timestamp;
 
-public class TOUser {
+public class TOAccount {
 
     private String id;
     private String name;
