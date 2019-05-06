@@ -7,7 +7,7 @@ create table user (
     password varchar(40) not null,
     token varchar(22),
     active boolean not null default true,
-    createdat datetime not null
+    createdat timestamp not null
 );
 
 
