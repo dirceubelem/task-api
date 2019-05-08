@@ -8,7 +8,7 @@ public class ServiceVersion {
 
     @GET
     public String getVersion() {
-        return "1.5";
+        return "1.6";
     }
 
 }
