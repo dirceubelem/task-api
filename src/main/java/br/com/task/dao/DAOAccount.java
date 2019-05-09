@@ -11,7 +11,7 @@ public class DAOAccount {
     public static TOAccount auth(Connection c, TOAccount u) throws Exception {
 
         StringBuilder s = new StringBuilder();
-        s.append(" select id, name, email, password, token, createdat, active from users ");
+        s.append(" select id, name, email, password, token, createdat, active from account ");
         s.append(" where ");
         s.append(" email = ? and password = ? ");
         s.append(" and active ");
@@ -38,7 +38,7 @@ public class DAOAccount {
     public static void updateToken(Connection c, TOAccount u) throws Exception {
 
         StringBuilder s = new StringBuilder();
-        s.append(" update user ");
+        s.append(" update account ");
         s.append(" set token = ? ");
         s.append(" where id = ? ");
 
