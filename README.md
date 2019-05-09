@@ -6,7 +6,7 @@
 <br/>
 <strong>POST</strong><br/>
 /v1/auth<br/>
-Header<br/>
+Header:<br/>
 Content-Type: application-json; charset=utf-8<br/>
 Accept: application-json; charset=utf-8<br/>
 <br/>
@@ -17,7 +17,7 @@ Body<br/>
 <h1>Me (Dados do Usuário logado)</h1>
 <br/>
 <strong>GET</strong><br/>
-Header<br/>
+/v1/me<br/>
+Header:<br/>
 Content-Type: application-json; charset=utf-8<br/>
 token: [USER TOKEN]<br/>
-/v1/me<br/>
