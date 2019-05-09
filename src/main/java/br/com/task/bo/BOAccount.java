@@ -8,41 +8,48 @@ import br.com.task.fw.Guid;
 import br.com.task.to.TOAccount;
 
 import java.sql.Connection;
+import java.util.List;
 
 public class BOAccount {
 
     public static boolean isValid(String token) throws Exception {
-        try(Connection c = Data.openConnection()){
+        try (Connection c = Data.openConnection()) {
             TOAccount a = DAOAccount.getByToken(c, token);
-            if(a != null){
+            if (a != null) {
 
                 DateTime now = DateTime.now();
-                if(a.getExpiredAt().getTime() > now.getMillis()){
+                if (a.getExpiredAt().getTime() > now.getMillis()) {
                     return true;
-                }else{
+                } else {
                     return false;
                 }
 
-            }else{
+            } else {
                 return false;
             }
         }
     }
 
     public static TOAccount me(String token) throws Exception {
-        try(Connection c = Data.openConnection()){
+        try (Connection c = Data.openConnection()) {
             return DAOAccount.getByToken(c, token);
+        }
+    }
+
+    public static List<TOAccount> accounts() throws Exception {
+        try (Connection c = Data.openConnection()) {
+            return DAOAccount.accounts(c);
         }
     }
 
     public static TOAccount auth(TOAccount u) throws Exception {
 
-        try(Connection c = Data.openConnection()){
+        try (Connection c = Data.openConnection()) {
 
             u.setPassword(Encrypt.sha1(u.getPassword()));
 
             TOAccount t = DAOAccount.auth(c, u);
-            if(t != null){
+            if (t != null) {
 
                 DateTime expiredAt = DateTime.now();
                 expiredAt.addMinute(5);

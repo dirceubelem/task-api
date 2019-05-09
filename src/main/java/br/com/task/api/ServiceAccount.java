@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
+import java.util.List;
 
 @Path("account")
 public class ServiceAccount {
@@ -24,7 +25,7 @@ public class ServiceAccount {
 
         TOAccount t = BOAccount.auth(u);
 
-        if(t == null){
+        if (t == null) {
             response.sendError(HttpServletResponse.SC_FORBIDDEN);
         }
 
@@ -37,13 +38,19 @@ public class ServiceAccount {
     @Produces("application/json;charset=utf-8")
     public TOAccount me(@HeaderParam("token") String token) throws Exception {
 
-        if(BOAccount.isValid(token)){
-           return BOAccount.me(token);
-        }else{
+        if (BOAccount.isValid(token)) {
+            return BOAccount.me(token);
+        } else {
             response.sendError(HttpServletResponse.SC_FORBIDDEN);
             return null;
         }
 
+    }
+
+    @GET
+    @Produces("application/json;charset=utf-8")
+    public List<TOAccount> accounts() throws Exception {
+        return BOAccount.accounts();
     }
 
 
