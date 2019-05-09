@@ -16,7 +16,7 @@ Body<br/>
 <br/>
 <h1>Me (Dados do Usuário logado)</h1>
 <br/>
-GET<br/>
+<strong>GET</strong><br/>
 Header<br/>
 Content-Type: application-json; charset=utf-8<br/>
 token: [USER TOKEN]<br/>
