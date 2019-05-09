@@ -5,10 +5,7 @@ import br.com.task.to.TOAccount;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 
 @Path("account")
@@ -32,6 +29,20 @@ public class ServiceAccount {
         }
 
         return t;
+
+    }
+
+    @GET
+    @Path("me")
+    @Produces("application/json;charset=utf-8")
+    public TOAccount me(@HeaderParam("token") String token) throws Exception {
+
+        if(BOAccount.isValid(token)){
+           return BOAccount.me(token);
+        }else{
+            response.sendError(HttpServletResponse.SC_FORBIDDEN);
+            return null;
+        }
 
     }
 

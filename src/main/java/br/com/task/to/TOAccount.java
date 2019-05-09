@@ -11,6 +11,7 @@ public class TOAccount {
     private String token;
     private boolean active;
     private Timestamp createdAt;
+    private Timestamp expiredAt;
 
     public String getId() {
         return id;
@@ -66,5 +67,13 @@ public class TOAccount {
 
     public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Timestamp getExpiredAt() {
+        return expiredAt;
+    }
+
+    public void setExpiredAt(Timestamp expiredAt) {
+        this.expiredAt = expiredAt;
     }
 }
