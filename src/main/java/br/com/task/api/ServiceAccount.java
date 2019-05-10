@@ -36,6 +36,27 @@ public class ServiceAccount {
     }
 
     @POST
+    @Path("forgot")
+    @Consumes("application/json;charset=utf-8")
+    public void forgot(TOAccount u) throws Exception {
+        TOAccount t = BOAccount.forgot(u);
+        if(t == null){
+            response.sendError(HttpServletResponse.SC_NOT_FOUND);
+        }
+    }
+
+    @PUT
+    @Consumes("application/json;charset=utf-8")
+    public void update(@HeaderParam("token") String token, TOAccount u) throws Exception {
+        if (BOAccount.isValid(token)) {
+            BOAccount.update(u);
+        } else {
+            response.sendError(HttpServletResponse.SC_FORBIDDEN);
+        }
+    }
+
+
+    @POST
     @Consumes("application/json;charset=utf-8")
     @Produces("application/json;charset=utf-8")
     public String insert(TOAccount u) throws Exception {
