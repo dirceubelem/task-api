@@ -19,8 +19,8 @@ import java.util.List;
 public class Data {
 
     public static Connection openConnection() throws Exception {
-        return openConnectionMySql("localhost", "task", "root", "");
-//        return openConnectionPostgre("localhost", "fluo", "fluo", "Senha123");
+//        return openConnectionMySql("localhost", "task", "root", "");
+        return openConnectionPostgre("localhost", "fluo", "fluo", "Senha123");
     }
 
     public static Connection openConnectionMySql(String server, String database, String user, String password) throws Exception {
