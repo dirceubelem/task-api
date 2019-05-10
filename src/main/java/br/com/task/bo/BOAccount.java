@@ -1,10 +1,7 @@
 package br.com.task.bo;
 
 import br.com.task.dao.DAOAccount;
-import br.com.task.fw.DateTime;
-import br.com.task.fw.Encrypt;
-import br.com.task.fw.Data;
-import br.com.task.fw.Guid;
+import br.com.task.fw.*;
 import br.com.task.to.TOAccount;
 
 import java.sql.Connection;
@@ -39,6 +36,24 @@ public class BOAccount {
     public static List<TOAccount> accounts() throws Exception {
         try (Connection c = Data.openConnection()) {
             return DAOAccount.accounts(c);
+        }
+    }
+
+    public static TOAccount insert(TOAccount u) throws Exception {
+        try(Connection c = Data.openConnection()){
+            u.setId(Guid.getString());
+            u.setPassword(Encrypt.sha1(u.getPassword()));
+            DAOAccount.insert(c, u);
+
+            StringBuilder message = new StringBuilder();
+            message.append("Olá ").append(u.getName()).append(",<br/><br/>");
+            message.append("Seja bem vindo ao Fluo!<br/><br/>");
+            message.append("Equipe Fluo");
+
+            Email email = new Email("Seja bem vindo ao Fluo", message.toString(), u.getEmail());
+            email.start();
+
+            return u;
         }
     }
 

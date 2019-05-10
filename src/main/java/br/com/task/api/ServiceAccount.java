@@ -2,6 +2,8 @@ package br.com.task.api;
 
 import br.com.task.bo.BOAccount;
 import br.com.task.to.TOAccount;
+import com.sun.corba.se.impl.oa.toa.TOA;
+import org.json.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,6 +34,20 @@ public class ServiceAccount {
         return t;
 
     }
+
+    @POST
+    @Consumes("application/json;charset=utf-8")
+    @Produces("application/json;charset=utf-8")
+    public String insert(TOAccount u) throws Exception {
+        TOAccount t = BOAccount.insert(u);
+        JSONObject j = new JSONObject();
+        j.put("id", t.getId());
+
+//        response.sendError(HttpServletResponse.SC_CREATED);
+
+        return j.toString();
+    }
+
 
     @GET
     @Path("me")

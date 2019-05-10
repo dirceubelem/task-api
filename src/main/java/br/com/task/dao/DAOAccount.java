@@ -10,6 +10,13 @@ import java.util.List;
 
 public class DAOAccount {
 
+    public static void insert(Connection c, TOAccount t) throws Exception {
+        StringBuilder s = new StringBuilder();
+        s.append(" insert into account(id, name, email, password, createdat, active) values ");
+        s.append(" (?, ?, ?, ?, now(), true) ");
+        Data.executeUpdate(c, s.toString(), t.getId(), t.getName(), t.getEmail(), t.getPassword());
+    }
+
     public static TOAccount getByToken(Connection c, String token) throws Exception {
 
         StringBuilder s = new StringBuilder();
