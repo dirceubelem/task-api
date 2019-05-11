@@ -14,7 +14,7 @@ Body<br/>
 {"email": "user@user.com", "password": "pass"}<br/>
 <br/>
 <br/>
-<h1>Me (Dados do Usuário logado)</h1>
+<h1>Dados do Usuário logado</h1>
 <br/>
 <strong>GET</strong><br/>
 /v1/account/me<br/>
