@@ -64,7 +64,7 @@ Content-Type: application-json; charset=utf-8<br/>
 token: [USER TOKEN]<br/><br/>
 <h1>Alterar um Projeto</h1>
 <br/>
-<strong>POST</strong><br/>
+<strong>PUT</strong><br/>
 /v1/project<br/>
 Header:<br/>
 Content-Type: application-json; charset=utf-8<br/>
