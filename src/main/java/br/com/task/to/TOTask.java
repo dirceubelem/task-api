@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 public class TOTask {
 
     private String id;
+    private String idProject;
     private int idStatus;
     private String idAccountFrom;
     private String idAccountTo;
@@ -111,5 +112,13 @@ public class TOTask {
 
     public void setPriority(int priority) {
         this.priority = priority;
+    }
+
+    public String getIdProject() {
+        return idProject;
+    }
+
+    public void setIdProject(String idProject) {
+        this.idProject = idProject;
     }
 }
