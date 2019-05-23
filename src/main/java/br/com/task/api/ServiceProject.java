@@ -2,6 +2,7 @@ package br.com.task.api;
 
 import br.com.task.bo.BOAccount;
 import br.com.task.bo.BOProject;
+import br.com.task.to.TOAccount;
 import br.com.task.to.TOProject;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +23,11 @@ public class ServiceProject {
     @Consumes("application/json;charset=utf-8")
     public void insert(@HeaderParam("token") String token, TOProject p) throws Exception {
         if (BOAccount.isValid(token)) {
-            BOProject.insert(p);
+
+            TOAccount account = BOAccount.me(token);
+
+            BOProject.insert(account, p);
+
             response.sendError(HttpServletResponse.SC_CREATED);
         } else {
             response.sendError(HttpServletResponse.SC_FORBIDDEN);
@@ -33,8 +38,11 @@ public class ServiceProject {
     @Consumes("application/json;charset=utf-8")
     public void update(@HeaderParam("token") String token, TOProject p) throws Exception {
         if (BOAccount.isValid(token)) {
-            BOProject.update(p);
-            response.sendError(HttpServletResponse.SC_ACCEPTED);
+            if(BOProject.update(p)) {
+                response.sendError(HttpServletResponse.SC_ACCEPTED);
+            }else{
+                response.sendError(HttpServletResponse.SC_NOT_FOUND);
+            }
         } else {
             response.sendError(HttpServletResponse.SC_FORBIDDEN);
         }

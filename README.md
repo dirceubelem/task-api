@@ -39,3 +39,35 @@ Content-Type: application-json; charset=utf-8<br/>
 <br/>
 Body<br/>
 {"email": "user@user.com"}<br/>
+<h1>Novo de Projeto</h1>
+<br/>
+<strong>POST</strong><br/>
+/v1/project<br/>
+Header:<br/>
+Content-Type: application-json; charset=utf-8<br/>
+token: [USER TOKEN]<br/><br/>
+Body<br/>
+{"name": "NOME DO PROJETO"}<br/>
+<h1>Lista de Projetos</h1>
+<br/>
+<strong>GET</strong><br/>
+/v1/project<br/>
+Header:<br/>
+Content-Type: application-json; charset=utf-8<br/>
+token: [USER TOKEN]<br/><br/>
+<h1>Obter um Projeto</h1>
+<br/>
+<strong>GET</strong><br/>
+/v1/project/{ID DO PROJETO}<br/>
+Header:<br/>
+Content-Type: application-json; charset=utf-8<br/>
+token: [USER TOKEN]<br/><br/>
+<h1>Alterar um Projeto</h1>
+<br/>
+<strong>POST</strong><br/>
+/v1/project<br/>
+Header:<br/>
+Content-Type: application-json; charset=utf-8<br/>
+token: [USER TOKEN]<br/><br/>
+Body<br/>
+{"id": "ID DO PROJETO", "name": "NOME DO PROJETO", "active": true}<br/>
