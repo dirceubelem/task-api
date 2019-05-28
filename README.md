@@ -5,7 +5,7 @@
 <h1>Autenticação</h1>
 <br/>
 <strong>POST</strong><br/>
-/v1/auth<br/>
+/v1/account/auth<br/>
 Header:<br/>
 Content-Type: application-json; charset=utf-8<br/>
 Accept: application-json; charset=utf-8<br/>
