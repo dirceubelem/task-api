@@ -41,10 +41,10 @@ public class BOAccount {
     }
 
     public static TOAccount forgot(TOAccount u) throws Exception {
-        try(Connection c = Data.openConnection()){
+        try (Connection c = Data.openConnection()) {
 
             TOAccount t = DAOAccount.getByEmail(c, u);
-            if(t != null){
+            if (t != null) {
 
                 String novaSenha = Guid.getString().substring(0, 8);
 
@@ -66,26 +66,34 @@ public class BOAccount {
     }
 
     public static void update(TOAccount u) throws Exception {
-        try(Connection c = Data.openConnection()){
+        try (Connection c = Data.openConnection()) {
             DAOAccount.update(c, u);
         }
     }
 
     public static TOAccount insert(TOAccount u) throws Exception {
-        try(Connection c = Data.openConnection()){
-            u.setId(Guid.getString());
-            u.setPassword(Encrypt.sha1(u.getPassword()));
-            DAOAccount.insert(c, u);
+        try (Connection c = Data.openConnection()) {
 
-            StringBuilder message = new StringBuilder();
-            message.append("Olá ").append(u.getName()).append(",<br/><br/>");
-            message.append("Seja bem vindo ao Fluo!<br/><br/>");
-            message.append("Equipe Fluo");
+            TOAccount t = DAOAccount.getByEmail(c, u);
+            if (t == null) {
 
-            Email email = new Email("Seja bem vindo ao Fluo", message.toString(), u.getEmail());
-            email.start();
+                u.setId(Guid.getString());
+                u.setPassword(Encrypt.sha1(u.getPassword()));
+                DAOAccount.insert(c, u);
 
-            return u;
+                StringBuilder message = new StringBuilder();
+                message.append("Olá ").append(u.getName()).append(",<br/><br/>");
+                message.append("Seja bem vindo ao Fluo!<br/><br/>");
+                message.append("Equipe Fluo");
+
+                Email email = new Email("Seja bem vindo ao Fluo", message.toString(), u.getEmail());
+                email.start();
+
+                return u;
+            } else {
+                return null;
+            }
+
         }
     }
 

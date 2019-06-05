@@ -41,7 +41,7 @@ public class ServiceAccount {
     @Consumes("application/json;charset=utf-8")
     public void forgot(TOAccount u) throws Exception {
         TOAccount t = BOAccount.forgot(u);
-        if(t == null){
+        if (t == null) {
             response.sendError(HttpServletResponse.SC_NOT_FOUND);
         }
     }
@@ -62,12 +62,14 @@ public class ServiceAccount {
     @Produces("application/json;charset=utf-8")
     public String insert(TOAccount u) throws Exception {
         TOAccount t = BOAccount.insert(u);
-        JSONObject j = new JSONObject();
-        j.put("id", t.getId());
-
-//        response.sendError(HttpServletResponse.SC_CREATED);
-
-        return j.toString();
+        if (t != null) {
+            JSONObject j = new JSONObject();
+            j.put("id", t.getId());
+            return j.toString();
+        } else {
+            response.sendError(HttpServletResponse.SC_CONFLICT);
+            return null;
+        }
     }
 
 
