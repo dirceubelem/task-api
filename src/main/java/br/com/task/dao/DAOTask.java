@@ -38,7 +38,7 @@ public class DAOTask {
         StringBuilder sql = new StringBuilder();
         sql.append(" select id, idproject, idstatus, idaccountfrom, idaccountto, name, description, tags, estimate, createdat, startedat, deliveredat, priority from task ");
         sql.append(" where ");
-        sql.append(" id = ? and active ");
+        sql.append(" id = ? ");
 
         try (ResultSet rs = Data.executeQuery(c, sql.toString(), p.getId())) {
 
@@ -68,16 +68,16 @@ public class DAOTask {
 
     }
 
-    public static List<TOTask> list(Connection c) throws Exception {
+    public static List<TOTask> listTasksProject(Connection c, String idProject) throws Exception {
 
         StringBuilder sql = new StringBuilder();
         sql.append(" select id, idproject, idstatus, idaccountfrom, idaccountto, name, description, tags, estimate, ");
         sql.append(" createdat, startedat, deliveredat, priority from task ");
         sql.append(" where ");
-        sql.append(" active ");
-        sql.append(" order by name ");
+        sql.append(" idproject = ? ");
+        sql.append(" order by priority ");
 
-        try (ResultSet rs = Data.executeQuery(c, sql.toString())) {
+        try (ResultSet rs = Data.executeQuery(c, sql.toString(), idProject)) {
 
             List<TOTask> l = new ArrayList<>();
 

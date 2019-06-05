@@ -12,6 +12,11 @@ import java.util.List;
 
 public class BOTask {
 
+    public static List<TOTask> listTasksProject(String idProject) throws Exception {
+        try (Connection c = Data.openConnection()) {
+            return DAOTask.listTasksProject(c, idProject);
+        }
+    }
 
     public static void insert(TOAccount account, TOTask p) throws Exception {
         try (Connection c = Data.openConnection()) {
@@ -54,12 +59,6 @@ public class BOTask {
     public static TOTask get(TOTask p) throws Exception {
         try (Connection c = Data.openConnection()) {
             return DAOTask.get(c, p);
-        }
-    }
-
-    public static List<TOTask> list() throws Exception {
-        try (Connection c = Data.openConnection()) {
-            return DAOTask.list(c);
         }
     }
 

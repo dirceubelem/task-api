@@ -2,8 +2,10 @@ package br.com.task.api;
 
 import br.com.task.bo.BOAccount;
 import br.com.task.bo.BOProject;
+import br.com.task.bo.BOTask;
 import br.com.task.to.TOAccount;
 import br.com.task.to.TOProject;
+import br.com.task.to.TOTask;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -38,9 +40,9 @@ public class ServiceProject {
     @Consumes("application/json;charset=utf-8")
     public void update(@HeaderParam("token") String token, TOProject p) throws Exception {
         if (BOAccount.isValid(token)) {
-            if(BOProject.update(p)) {
+            if (BOProject.update(p)) {
                 response.sendError(HttpServletResponse.SC_ACCEPTED);
-            }else{
+            } else {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
             }
         } else {
@@ -67,6 +69,18 @@ public class ServiceProject {
     public List<TOProject> list(@HeaderParam("token") String token) throws Exception {
         if (BOAccount.isValid(token)) {
             return BOProject.list();
+        } else {
+            response.sendError(HttpServletResponse.SC_FORBIDDEN);
+            return null;
+        }
+    }
+
+    @GET
+    @Path("{id}/tasks")
+    @Produces("application/json;charset=utf-8")
+    public List<TOTask> listTasksProject(@HeaderParam("token") String token, @PathParam("id") String idProject) throws Exception {
+        if (BOAccount.isValid(token)) {
+            return BOTask.listTasksProject(idProject);
         } else {
             response.sendError(HttpServletResponse.SC_FORBIDDEN);
             return null;
