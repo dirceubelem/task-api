@@ -8,20 +8,20 @@ public class TOTask {
 
     private String id;
     private String idProject;
-    private int idStatus;
+    private Integer idStatus;
     private String idAccountFrom;
     private String idAccountTo;
     private String name;
     private String description;
     private String tags;
-    private double estimate;
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+    private Double estimate;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone="GMT-3")
     private Timestamp createdAt;
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone="GMT-3")
     private Timestamp startedAt;
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone="GMT-3")
     private Timestamp deliveredAt;
-    private int priority;
+    private Integer priority;
 
     public String getId() {
         return id;
@@ -31,11 +31,19 @@ public class TOTask {
         this.id = id;
     }
 
-    public int getIdStatus() {
+    public String getIdProject() {
+        return idProject;
+    }
+
+    public void setIdProject(String idProject) {
+        this.idProject = idProject;
+    }
+
+    public Integer getIdStatus() {
         return idStatus;
     }
 
-    public void setIdStatus(int idStatus) {
+    public void setIdStatus(Integer idStatus) {
         this.idStatus = idStatus;
     }
 
@@ -79,11 +87,11 @@ public class TOTask {
         this.tags = tags;
     }
 
-    public double getEstimate() {
+    public Double getEstimate() {
         return estimate;
     }
 
-    public void setEstimate(double estimate) {
+    public void setEstimate(Double estimate) {
         this.estimate = estimate;
     }
 
@@ -111,19 +119,11 @@ public class TOTask {
         this.deliveredAt = deliveredAt;
     }
 
-    public int getPriority() {
+    public Integer getPriority() {
         return priority;
     }
 
-    public void setPriority(int priority) {
+    public void setPriority(Integer priority) {
         this.priority = priority;
-    }
-
-    public String getIdProject() {
-        return idProject;
-    }
-
-    public void setIdProject(String idProject) {
-        this.idProject = idProject;
     }
 }

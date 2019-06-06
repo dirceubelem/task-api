@@ -37,15 +37,33 @@ public class BOTask {
             TOTask p = DAOTask.get(c, t);
             if (p != null) {
 
-                p.setName(t.getName());
-                p.setIdAccountTo(t.getIdAccountTo());
-                p.setDescription(t.getDescription());
-                p.setIdStatus(t.getIdStatus());
-                p.setPriority(t.getPriority());
-                p.setDeliveredAt(t.getDeliveredAt());
-                p.setStartedAt(t.getStartedAt());
-                p.setEstimate(t.getEstimate());
-                p.setTags(t.getTags());
+                if (t.getName() != null) {
+                    p.setName(t.getName());
+                }
+                if (t.getIdAccountTo() != null) {
+                    p.setIdAccountTo(t.getIdAccountTo());
+                }
+                if (t.getDescription() != null) {
+                    p.setDescription(t.getDescription());
+                }
+                if (t.getIdStatus() != null) {
+                    p.setIdStatus(t.getIdStatus());
+                }
+                if (t.getPriority() != null) {
+                    p.setPriority(t.getPriority());
+                }
+                if (t.getDeliveredAt() != null) {
+                    p.setDeliveredAt(t.getDeliveredAt());
+                }
+                if (t.getEstimate() != null) {
+                    p.setEstimate(t.getEstimate());
+                }
+                if (t.getStartedAt() != null) {
+                    p.setStartedAt(t.getStartedAt());
+                }
+                if (t.getTags() != null) {
+                    p.setTags(t.getTags());
+                }
 
                 DAOTask.update(c, p);
 

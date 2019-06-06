@@ -9,7 +9,7 @@ public class TOProject {
     private String id;
     private String idAccountOwner;
     private String name;
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone="GMT-3")
     private Timestamp createdAt;
     private boolean active;
 

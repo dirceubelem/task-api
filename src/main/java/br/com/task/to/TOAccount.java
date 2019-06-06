@@ -12,9 +12,9 @@ public class TOAccount {
     private String password;
     private String token;
     private boolean active;
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone="GMT-3")
     private Timestamp createdAt;
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone="GMT-3")
     private Timestamp expiredAt;
 
     public String getId() {

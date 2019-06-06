@@ -14,7 +14,7 @@ public class DAOTask {
 
         StringBuilder sql = new StringBuilder();
         sql.append(" insert into task (id, idproject, idstatus, idaccountfrom, idaccountto, name, description, tags, estimate, createdat, startedat, deliveredat, priority) values ");
-        sql.append(" (id, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
+        sql.append(" (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
 
         Data.executeUpdate(c, sql.toString(), p.getId(), p.getIdProject(), p.getIdStatus(), p.getIdAccountFrom(), p.getIdAccountTo(), p.getName(),
                 p.getDescription(), p.getTags(), p.getEstimate(), p.getCreatedAt(), p.getStartedAt(), p.getDeliveredAt(), p.getPriority());
@@ -24,11 +24,11 @@ public class DAOTask {
     public static void update(Connection c, TOTask p) throws Exception {
 
         StringBuilder sql = new StringBuilder();
-        sql.append(" update task set id, idproject, idstatus, idaccountfrom, idaccountto, name, description, tags, estimate, createdat, startedat, deliveredat, priority ");
+        sql.append(" update task set idstatus = ?, idaccountto = ?, name = ?, description = ?, tags = ?, estimate = ?, startedat = ?, deliveredat = ?, priority = ? ");
         sql.append(" where id = ? ");
 
-        Data.executeUpdate(c, sql.toString(), p.getIdProject(), p.getIdStatus(), p.getIdAccountFrom(), p.getIdAccountTo(), p.getName(),
-                p.getDescription(), p.getTags(), p.getEstimate(), p.getCreatedAt(), p.getStartedAt(), p.getDeliveredAt(), p.getPriority(),
+        Data.executeUpdate(c, sql.toString(), p.getIdStatus(), p.getIdAccountTo(), p.getName(),
+                p.getDescription(), p.getTags(), p.getEstimate(), p.getStartedAt(), p.getDeliveredAt(), p.getPriority(),
                 p.getId());
 
     }
