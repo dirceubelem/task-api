@@ -1,5 +1,7 @@
 package br.com.task.to;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.sql.Timestamp;
 
 public class TOProject {
@@ -7,6 +9,7 @@ public class TOProject {
     private String id;
     private String idAccountOwner;
     private String name;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private Timestamp createdAt;
     private boolean active;
 

@@ -1,5 +1,7 @@
 package br.com.task.to;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.sql.Timestamp;
 
 public class TOTask {
@@ -13,8 +15,11 @@ public class TOTask {
     private String description;
     private String tags;
     private double estimate;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private Timestamp createdAt;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private Timestamp startedAt;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private Timestamp deliveredAt;
     private int priority;
 
