@@ -83,6 +83,7 @@ public class BOTask {
             TOTask p = DAOTask.get(c, t);
             if (p != null) {
 
+
                 TOTimeKeeper tk = DAOTimeKeeper.hasStartedAndNotFinalized(c, t.getId(), a.getId());
                 if (tk == null) {
                     tk = new TOTimeKeeper();
@@ -91,6 +92,12 @@ public class BOTask {
                     tk.setIdAccount(a.getId());
                     tk.setStartedAt(DateTime.now().getTimestamp());
                     DAOTimeKeeper.insert(c, tk);
+
+                    if (p.getStartedAt() == null) {
+                        p.setStartedAt(tk.getStartedAt());
+                        DAOTask.update(c, p);
+                    }
+
                     return true;
 
                 } else {
