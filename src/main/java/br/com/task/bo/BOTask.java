@@ -83,27 +83,70 @@ public class BOTask {
             TOTask p = DAOTask.get(c, t);
             if (p != null) {
 
+                if (p.getDeliveredAt() == null) {
 
-                TOTimeKeeper tk = DAOTimeKeeper.hasStartedAndNotFinalized(c, t.getId(), a.getId());
-                if (tk == null) {
-                    tk = new TOTimeKeeper();
-                    tk.setId(Guid.getString());
-                    tk.setIdTask(t.getId());
-                    tk.setIdAccount(a.getId());
-                    tk.setStartedAt(DateTime.now().getTimestamp());
-                    DAOTimeKeeper.insert(c, tk);
+                    TOTimeKeeper tk = DAOTimeKeeper.hasStartedAndNotFinalized(c, t.getId(), a.getId());
+                    if (tk == null) {
+                        tk = new TOTimeKeeper();
+                        tk.setId(Guid.getString());
+                        tk.setIdTask(t.getId());
+                        tk.setIdAccount(a.getId());
+                        tk.setStartedAt(DateTime.now().getTimestamp());
+                        DAOTimeKeeper.insert(c, tk);
 
-                    if (p.getStartedAt() == null) {
-                        p.setStartedAt(tk.getStartedAt());
-                        DAOTask.update(c, p);
+                        if (p.getStartedAt() == null) {
+                            p.setStartedAt(tk.getStartedAt());
+                            DAOTask.update(c, p);
+                        }
+
+                        return true;
+
+                    } else {
+                        return false;
                     }
-
-                    return true;
 
                 } else {
                     return false;
                 }
 
+
+            } else {
+                return false;
+            }
+        }
+
+    }
+
+    public static boolean stopTask(TOTask t, TOAccount a) throws Exception {
+
+        try (Connection c = Data.openConnection()) {
+
+            TOTask p = DAOTask.get(c, t);
+            if (p != null) {
+
+                if (p.getDeliveredAt() == null) {
+
+                    TOTimeKeeper tk = DAOTimeKeeper.hasStartedAndNotFinalized(c, t.getId(), a.getId());
+                    if (tk != null) {
+
+                        DateTime started = new DateTime(tk.getStartedAt());
+                        DateTime now = DateTime.now();
+                        int time = (int) (now.getMillis() - started.getMillis()) / 1000;
+
+                        tk.setTime(time);
+                        tk.setFinalizedAt(DateTime.now().getTimestamp());
+
+                        DAOTimeKeeper.update(c, tk);
+
+                        return true;
+
+                    } else {
+                        return false;
+                    }
+
+                } else {
+                    return false;
+                }
 
             } else {
                 return false;
@@ -119,19 +162,30 @@ public class BOTask {
             TOTask p = DAOTask.get(c, t);
             if (p != null) {
 
-                TOTimeKeeper tk = DAOTimeKeeper.hasStartedAndNotFinalized(c, t.getId(), a.getId());
-                if (tk != null) {
+                if (p.getDeliveredAt() == null) {
 
-                    DateTime started = new DateTime(tk.getStartedAt());
                     DateTime now = DateTime.now();
-                    int time = (int) (now.getMillis() - started.getMillis()) / 1000;
 
-                    tk.setTime(time);
-                    tk.setFinalizedAt(DateTime.now().getTimestamp());
+                    p.setDeliveredAt(now.getTimestamp());
+                    DAOTask.update(c, p);
 
-                    DAOTimeKeeper.update(c, tk);
+                    TOTimeKeeper tk = DAOTimeKeeper.hasStartedAndNotFinalized(c, t.getId(), a.getId());
+                    if (tk != null) {
 
-                    return true;
+                        DateTime started = new DateTime(tk.getStartedAt());
+
+                        int time = (int) (now.getMillis() - started.getMillis()) / 1000;
+
+                        tk.setTime(time);
+                        tk.setFinalizedAt(DateTime.now().getTimestamp());
+
+                        DAOTimeKeeper.update(c, tk);
+
+                        return true;
+
+                    } else {
+                        return false;
+                    }
 
                 } else {
                     return false;

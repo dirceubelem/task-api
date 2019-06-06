@@ -74,6 +74,24 @@ public class ServiceTask {
 
             TOAccount a = BOAccount.me(token);
 
+            if (BOTask.stopTask(p, a)) {
+                response.sendError(HttpServletResponse.SC_ACCEPTED);
+            } else {
+                response.sendError(HttpServletResponse.SC_NOT_FOUND);
+            }
+        } else {
+            response.sendError(HttpServletResponse.SC_FORBIDDEN);
+        }
+    }
+
+    @POST
+    @Path("finished")
+    @Consumes("application/json;charset=utf-8")
+    public void finished(@HeaderParam("token") String token, TOTask p) throws Exception {
+        if (BOAccount.isValid(token)) {
+
+            TOAccount a = BOAccount.me(token);
+
             if (BOTask.finishedTask(p, a)) {
                 response.sendError(HttpServletResponse.SC_ACCEPTED);
             } else {

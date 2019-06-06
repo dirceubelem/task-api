@@ -33,7 +33,7 @@ public class DAOTimeKeeper {
         StringBuilder sql = new StringBuilder();
         sql.append(" select id, idtask, idaccount, startedat, finalizedat, time from timekeeper ");
         sql.append(" where ");
-        sql.append(" id = ? and finalizedat is null and idaccount = ? ");
+        sql.append(" idtask = ? and finalizedat is null and idaccount = ? ");
 
         try (ResultSet rs = Data.executeQuery(c, sql.toString(), idTask, idAccount)) {
 
