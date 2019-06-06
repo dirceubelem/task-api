@@ -80,8 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/to/TOTimeKeeper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="68" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="738">
+              <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -502,12 +502,12 @@
       <workItem from="1559786675938" duration="8014000" />
       <workItem from="1559827567198" duration="378000" />
       <workItem from="1559846729306" duration="270000" />
-      <workItem from="1559850068226" duration="8000" />
+      <workItem from="1559850068226" duration="144000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40098000" />
+    <option name="totallyTimeSpent" value="40234000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -918,8 +918,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/to/TOTimeKeeper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="738">
+          <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
