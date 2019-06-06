@@ -1,3 +1,4 @@
+drop table timekeeper;
 drop table task;
 drop table status;
 drop table project;
@@ -67,4 +68,15 @@ create table task
     constraint fk_task_status foreign key (idstatus) references status (id),
     constraint fk_task_account_01 foreign key (idaccountto) references account (id),
     constraint fk_task_account_02 foreign key (idaccountfrom) references account (id)
+);
+
+create table timekeeper (
+    id varchar(22) not null,
+    idtask varchar(22) not null,
+    idaccount varchar(22) not null,
+    startedat timestamp not null,
+    finalizedat timestamp,
+    time int,
+    constraint fk_timekeeper_task foreign key (idtask) references task (id),
+    constraint fk_timekeeper_account foreign key (idaccount) references account (id)
 );
