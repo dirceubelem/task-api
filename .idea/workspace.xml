@@ -7,11 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf2f451d-777b-4995-a8f1-23817b188744" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/task/bo/BOTimeKeeper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOTimeKeeper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/task/to/TOTimeKeeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/dao/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/dao/script.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/bo/BOTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/bo/BOTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOTimeKeeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOTimeKeeper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/to/TOTimeKeeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/to/TOTimeKeeper.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -82,22 +81,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOTimeKeeper.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOTimeKeeper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="50" column="20" lean-forward="true" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+            <state relative-caret-position="433">
+              <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -150,7 +137,6 @@
         <option value="$PROJECT_DIR$/compile.sh" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/bo/BOAccount.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceAccount.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceProject.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/api/ApplicationConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/fw/Data.java" />
@@ -160,14 +146,15 @@
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/api/JacksonConfigurator.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOTask.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/task/bo/BOTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/to/TOTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/to/TOProject.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/to/TOAccount.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/dao/script.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/task/to/TOTimeKeeper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOTimeKeeper.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/task/bo/BOTimeKeeper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOTimeKeeper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/task/bo/BOTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/task/to/TOTimeKeeper.java" />
       </list>
     </option>
   </component>
@@ -516,12 +503,12 @@
       <workItem from="1559584854737" duration="68000" />
       <workItem from="1559588996392" duration="100000" />
       <workItem from="1559774617578" duration="7040000" />
-      <workItem from="1559786675938" duration="5267000" />
+      <workItem from="1559786675938" duration="7230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36695000" />
+    <option name="totallyTimeSpent" value="38658000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -601,7 +588,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOTask.java</url>
-          <line>39</line>
+          <line>41</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
@@ -745,13 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="93" column="28" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOProject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
@@ -842,26 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="40" column="27" lean-forward="true" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/to/TOAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="65" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/to/TOProject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -876,16 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="22" column="59" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="20" selection-start-line="20" selection-end-line="74" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -910,11 +860,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1155">
+            <caret line="108" column="26" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="992">
+          <caret line="68" column="5" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="68" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOTimeKeeper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="32" column="51" lean-forward="true" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOTimeKeeper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/to/TOAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="61" column="66" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/to/TOTimeKeeper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="195">
+          <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#283#284#0" expanded="true" />
             <element signature="e#308#309#0" expanded="true" />
             <element signature="e#344#345#0" expanded="true" />
@@ -943,40 +961,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1155">
-            <caret line="108" column="26" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOTask.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="992">
-          <caret line="68" column="5" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="68" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/dao/DAOTimeKeeper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="20" lean-forward="true" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOTimeKeeper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        <state relative-caret-position="433">
+          <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

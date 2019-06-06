@@ -28,6 +28,32 @@ public class DAOTimeKeeper {
 
     }
 
+    public static TOTimeKeeper hasStartedAndNotFinalized(Connection c, String idTask, String idAccount) throws Exception {
+
+        StringBuilder sql = new StringBuilder();
+        sql.append(" select id, idtask, idaccount, startedat, finalizedat, time from timekeeper ");
+        sql.append(" where ");
+        sql.append(" id = ? and finalizedat is null and idaccount = ? ");
+
+        try (ResultSet rs = Data.executeQuery(c, sql.toString(), idTask, idAccount)) {
+
+            if (rs.next()) {
+                TOTimeKeeper p = new TOTimeKeeper();
+                p.setId(rs.getString("id"));
+                p.setIdTask(rs.getString("idtask"));
+                p.setIdAccount(rs.getString("idaccount"));
+                p.setStartedAt(rs.getTimestamp("startedat"));
+                p.setFinalizedAt(rs.getTimestamp("finalizedat"));
+                p.setTime(rs.getInt("time"));
+
+                return p;
+            } else {
+                return null;
+            }
+
+        }
+    }
+
     public static TOTimeKeeper get(Connection c, TOTimeKeeper p) throws Exception {
 
         StringBuilder sql = new StringBuilder();

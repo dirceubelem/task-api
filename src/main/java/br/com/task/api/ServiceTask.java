@@ -48,6 +48,42 @@ public class ServiceTask {
         }
     }
 
+    @POST
+    @Path("start")
+    @Consumes("application/json;charset=utf-8")
+    public void start(@HeaderParam("token") String token, TOTask p) throws Exception {
+        if (BOAccount.isValid(token)) {
+
+            TOAccount a = BOAccount.me(token);
+
+            if (BOTask.startTask(p, a)) {
+                response.sendError(HttpServletResponse.SC_ACCEPTED);
+            } else {
+                response.sendError(HttpServletResponse.SC_CONFLICT);
+            }
+        } else {
+            response.sendError(HttpServletResponse.SC_FORBIDDEN);
+        }
+    }
+
+    @POST
+    @Path("stop")
+    @Consumes("application/json;charset=utf-8")
+    public void stop(@HeaderParam("token") String token, TOTask p) throws Exception {
+        if (BOAccount.isValid(token)) {
+
+            TOAccount a = BOAccount.me(token);
+
+            if (BOTask.finishedTask(p, a)) {
+                response.sendError(HttpServletResponse.SC_ACCEPTED);
+            } else {
+                response.sendError(HttpServletResponse.SC_NOT_FOUND);
+            }
+        } else {
+            response.sendError(HttpServletResponse.SC_FORBIDDEN);
+        }
+    }
+
     @GET
     @Path("{id}")
     @Produces("application/json;charset=utf-8")

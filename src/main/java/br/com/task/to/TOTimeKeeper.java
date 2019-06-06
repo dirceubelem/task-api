@@ -1,5 +1,7 @@
 package br.com.task.to;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.sql.Timestamp;
 
 public class TOTimeKeeper {
@@ -7,7 +9,9 @@ public class TOTimeKeeper {
     private String id;
     private String idTask;
     private String idAccount;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone="GMT-3")
     private Timestamp startedAt;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone="GMT-3")
     private Timestamp finalizedAt;
     private Integer time;
 

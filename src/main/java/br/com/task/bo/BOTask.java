@@ -1,11 +1,13 @@
 package br.com.task.bo;
 
 import br.com.task.dao.DAOTask;
+import br.com.task.dao.DAOTimeKeeper;
 import br.com.task.fw.Data;
 import br.com.task.fw.DateTime;
 import br.com.task.fw.Guid;
 import br.com.task.to.TOAccount;
 import br.com.task.to.TOTask;
+import br.com.task.to.TOTimeKeeper;
 
 import java.sql.Connection;
 import java.util.List;
@@ -72,6 +74,67 @@ public class BOTask {
                 return false;
             }
         }
+    }
+
+    public static boolean startTask(TOTask t, TOAccount a) throws Exception {
+
+        try (Connection c = Data.openConnection()) {
+
+            TOTask p = DAOTask.get(c, t);
+            if (p != null) {
+
+                TOTimeKeeper tk = DAOTimeKeeper.hasStartedAndNotFinalized(c, t.getId(), a.getId());
+                if (tk == null) {
+                    tk = new TOTimeKeeper();
+                    tk.setId(Guid.getString());
+                    tk.setIdTask(t.getId());
+                    tk.setIdAccount(a.getId());
+                    tk.setStartedAt(DateTime.now().getTimestamp());
+                    DAOTimeKeeper.insert(c, tk);
+                    return true;
+
+                } else {
+                    return false;
+                }
+
+
+            } else {
+                return false;
+            }
+        }
+
+    }
+
+    public static boolean finishedTask(TOTask t, TOAccount a) throws Exception {
+
+        try (Connection c = Data.openConnection()) {
+
+            TOTask p = DAOTask.get(c, t);
+            if (p != null) {
+
+                TOTimeKeeper tk = DAOTimeKeeper.hasStartedAndNotFinalized(c, t.getId(), a.getId());
+                if (tk != null) {
+
+                    DateTime started = new DateTime(tk.getStartedAt());
+                    DateTime now = DateTime.now();
+                    int time = (int) (now.getMillis() - started.getMillis()) / 1000;
+
+                    tk.setTime(time);
+                    tk.setFinalizedAt(DateTime.now().getTimestamp());
+
+                    DAOTimeKeeper.update(c, tk);
+
+                    return true;
+
+                } else {
+                    return false;
+                }
+
+            } else {
+                return false;
+            }
+        }
+
     }
 
     public static TOTask get(TOTask p) throws Exception {
