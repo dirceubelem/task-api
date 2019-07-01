@@ -120,4 +120,25 @@ public class BOAccount {
 
     }
 
+    public static TOAccount renewToken(TOAccount u, String token) throws Exception {
+
+        try (Connection c = Data.openConnection()) {
+
+            TOAccount t = DAOAccount.getByToken(c, token);
+            if (t != null && t.getEmail().equals(u.getEmail())) {
+
+                DateTime expiredAt = DateTime.now();
+                expiredAt.addMinute(5);
+
+                t.setExpiredAt(expiredAt.getTimestamp());
+
+                t.setToken(Guid.getString());
+                DAOAccount.updateToken(c, t);
+            }
+
+            return t;
+        }
+
+    }
+
 }

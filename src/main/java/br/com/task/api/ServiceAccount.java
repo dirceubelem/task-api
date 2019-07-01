@@ -37,6 +37,22 @@ public class ServiceAccount {
     }
 
     @POST
+    @Path("renew")
+    @Consumes("application/json;charset=utf-8")
+    @Produces("application/json;charset=utf-8")
+    public TOAccount renewToken(@HeaderParam("token") String token, TOAccount u) throws Exception {
+
+        TOAccount t = BOAccount.renewToken(u, token);
+
+        if (t == null) {
+            response.sendError(HttpServletResponse.SC_FORBIDDEN);
+        }
+
+        return t;
+
+    }
+
+    @POST
     @Path("forgot")
     @Consumes("application/json;charset=utf-8")
     public void forgot(TOAccount u) throws Exception {
