@@ -39,9 +39,9 @@ public class DAOProject {
         sql.append(" where ");
         sql.append(" id = ? and active ");
 
-        try(ResultSet rs = Data.executeQuery(c, sql.toString(), p.getId())){
+        try (ResultSet rs = Data.executeQuery(c, sql.toString(), p.getId())) {
 
-            if(rs.next()){
+            if (rs.next()) {
                 p = new TOProject();
                 p.setId(rs.getString("id"));
                 p.setName(rs.getString("name"));
@@ -51,7 +51,7 @@ public class DAOProject {
 
                 return p;
 
-            }else{
+            } else {
                 return null;
             }
 
@@ -62,24 +62,27 @@ public class DAOProject {
     public static List<TOProject> list(Connection c) throws Exception {
 
         StringBuilder sql = new StringBuilder();
-        sql.append(" select id, idAccountOwner, name, createdAt, active from project ");
+        sql.append(" select p.id, p.idAccountOwner, p.name, p.createdAt, p.active, count(t.id) as tasks from project p  ");
+        sql.append(" left join task t on p.id = t.idproject  ");
         sql.append(" where ");
-        sql.append(" active ");
-        sql.append(" order by name ");
+        sql.append(" p.active ");
+        sql.append(" group by p.id, p.idAccountOwner, p.name, p.createdAt, p.active ");
+        sql.append(" order by p.name ");
 
-        try(ResultSet rs = Data.executeQuery(c, sql.toString())){
+        try (ResultSet rs = Data.executeQuery(c, sql.toString())) {
 
             List<TOProject> l = new ArrayList<>();
 
             TOProject p;
 
-            while(rs.next()){
+            while (rs.next()) {
                 p = new TOProject();
                 p.setId(rs.getString("id"));
                 p.setName(rs.getString("name"));
                 p.setIdAccountOwner(rs.getString("idAccountOwner"));
                 p.setCreatedAt(rs.getTimestamp("createdAt"));
                 p.setActive(rs.getBoolean("active"));
+                p.setTasks(rs.getInt("tasks"));
 
                 l.add(p);
 

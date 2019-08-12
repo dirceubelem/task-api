@@ -9,9 +9,10 @@ public class TOProject {
     private String id;
     private String idAccountOwner;
     private String name;
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone="GMT-3")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone = "GMT-3")
     private Timestamp createdAt;
     private boolean active;
+    private int tasks;
 
     public String getId() {
         return id;
@@ -51,5 +52,13 @@ public class TOProject {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public int getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(int tasks) {
+        this.tasks = tasks;
     }
 }
