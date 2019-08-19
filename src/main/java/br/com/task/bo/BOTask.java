@@ -14,6 +14,12 @@ import java.util.List;
 
 public class BOTask {
 
+    public static List<TOTask> myTasks(TOAccount t) throws Exception {
+        try (Connection c = Data.openConnection()) {
+            return DAOTask.myTasks(c, t);
+        }
+    }
+
     public static List<TOTask> listTasksProject(String idProject) throws Exception {
         try (Connection c = Data.openConnection()) {
             return DAOTask.listTasksProject(c, idProject);

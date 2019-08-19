@@ -1,8 +1,10 @@
 package br.com.task.api;
 
 import br.com.task.bo.BOAccount;
+import br.com.task.bo.BOTask;
 import br.com.task.fw.Cache;
 import br.com.task.to.TOAccount;
+import br.com.task.to.TOTask;
 import com.sun.corba.se.impl.oa.toa.TOA;
 import org.json.JSONObject;
 
@@ -107,6 +109,21 @@ public class ServiceAccount {
     @Produces("application/json;charset=utf-8")
     public List<TOAccount> accounts() throws Exception {
         return BOAccount.accounts();
+    }
+
+    @GET
+    @Path("tasks")
+    @Produces("application/json;charset=utf-8")
+    public List<TOTask> listTasksProject(@HeaderParam("token") String token) throws Exception {
+        if (BOAccount.isValid(token)) {
+
+            TOAccount t = BOAccount.me(token);
+
+            return BOTask.myTasks(t);
+        } else {
+            response.sendError(HttpServletResponse.SC_FORBIDDEN);
+            return null;
+        }
     }
 
 

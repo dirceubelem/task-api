@@ -1,6 +1,7 @@
 package br.com.task.dao;
 
 import br.com.task.fw.Data;
+import br.com.task.to.TOAccount;
 import br.com.task.to.TOTask;
 
 import java.sql.Connection;
@@ -78,6 +79,48 @@ public class DAOTask {
         sql.append(" order by priority ");
 
         try (ResultSet rs = Data.executeQuery(c, sql.toString(), idProject)) {
+
+            List<TOTask> l = new ArrayList<>();
+
+            TOTask p;
+
+            while (rs.next()) {
+                p = new TOTask();
+                p.setId(rs.getString("id"));
+                p.setIdProject(rs.getString("idproject"));
+                p.setIdStatus(rs.getInt("idstatus"));
+                p.setIdAccountFrom(rs.getString("idaccountfrom"));
+                p.setIdAccountTo(rs.getString("idaccountto"));
+                p.setName(rs.getString("name"));
+                p.setDescription(rs.getString("description"));
+                p.setTags(rs.getString("tags"));
+                p.setEstimate(rs.getDouble("estimate"));
+                p.setCreatedAt(rs.getTimestamp("createdat"));
+                p.setStartedAt(rs.getTimestamp("startedat"));
+                p.setDeliveredAt(rs.getTimestamp("deliveredat"));
+                p.setPriority(rs.getInt("priority"));
+
+                l.add(p);
+
+            }
+
+            return l;
+
+        }
+
+    }
+
+    public static List<TOTask> myTasks(Connection c, TOAccount t) throws Exception {
+
+        StringBuilder sql = new StringBuilder();
+        sql.append(" select id, idproject, idstatus, idaccountfrom, idaccountto, name, description, tags, estimate, ");
+        sql.append(" createdat, startedat, deliveredat, priority from task ");
+        sql.append(" where ");
+        sql.append(" (idaccountfrom = ? or idaccountto = ?) ");
+        sql.append(" deliveredat is null ");
+        sql.append(" order by priority ");
+
+        try (ResultSet rs = Data.executeQuery(c, sql.toString(), t.getId(), t.getId())) {
 
             List<TOTask> l = new ArrayList<>();
 
