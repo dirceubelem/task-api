@@ -117,7 +117,7 @@ public class DAOTask {
         sql.append(" createdat, startedat, deliveredat, priority from task ");
         sql.append(" where ");
         sql.append(" (idaccountfrom = ? or idaccountto = ?) ");
-        sql.append(" deliveredat is null ");
+        sql.append(" and deliveredat is null ");
         sql.append(" order by priority ");
 
         try (ResultSet rs = Data.executeQuery(c, sql.toString(), t.getId(), t.getId())) {
