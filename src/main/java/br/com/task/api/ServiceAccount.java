@@ -136,7 +136,7 @@ public class ServiceAccount {
 
     @POST
     @Path("photo")
-//    @Produces("application/json;charset=UTF-8")
+    @Produces("application/json;charset=UTF-8")
     public TOAccount sendPhoto(@HeaderParam("token") String token) throws Exception {
 
         if (BOAccount.isValid(token)) {
@@ -149,15 +149,15 @@ public class ServiceAccount {
 
                     DateTime now = DateTime.now();
 
-                    String picture = a.getId() + "-" + now.toString("yyyyMMddHHmmss");
+                    String picture = a.getId() + "-" + now.toString("yyyyMMddHHmmss") + ".png";
 
-                    String file = "/opt/tomcat/webapps/br.com.task.file/" + picture + ".png";
-//                    String file = "/Users/dirceubelem/Desktop/" + picture + ".png";
+                    String file = "/opt/tomcat/webapps/br.com.task.file/" + picture;
+//                    String file = "/Users/dirceubelem/Desktop/" + picture;
                     getFile(request, file);
 
                     a.setPicture(picture);
 
-                    BOAccount.update(a);
+                    BOAccount.updatePicture(a);
 
                     a = BOAccount.renewToken(a, token);
 

@@ -71,6 +71,12 @@ public class BOAccount {
         }
     }
 
+    public static void updatePicture(TOAccount u) throws Exception {
+        try (Connection c = Data.openConnection()) {
+            DAOAccount.updatePicture(c, u);
+        }
+    }
+
     public static TOAccount insert(TOAccount u) throws Exception {
         try (Connection c = Data.openConnection()) {
 

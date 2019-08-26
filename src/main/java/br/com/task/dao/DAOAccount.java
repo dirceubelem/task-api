@@ -24,6 +24,13 @@ public class DAOAccount {
         Data.executeUpdate(c, s.toString(), t.getName(), t.getEmail(), t.getPassword(), t.getPicture(), t.getId());
     }
 
+    public static void updatePicture(Connection c, TOAccount t) throws Exception {
+        StringBuilder s = new StringBuilder();
+        s.append(" update account set picture = ? ");
+        s.append(" where id = ? ");
+        Data.executeUpdate(c, s.toString(), t.getPicture(), t.getId());
+    }
+
     public static TOAccount getByToken(Connection c, String token) throws Exception {
 
         StringBuilder s = new StringBuilder();
