@@ -136,7 +136,7 @@ public class ServiceAccount {
 
     @POST
     @Path("photo")
-    @Produces("application/json;charset=UTF-8")
+//    @Produces("application/json;charset=UTF-8")
     public TOAccount sendPhoto(@HeaderParam("token") String token) throws Exception {
 
         if (BOAccount.isValid(token)) {
@@ -152,6 +152,7 @@ public class ServiceAccount {
                     String picture = a.getId() + "-" + now.toString("yyyyMMddHHmmss");
 
                     String file = "/opt/tomcat/webapps/br.com.task.file/" + picture + ".png";
+//                    String file = "/Users/dirceubelem/Desktop/" + picture + ".png";
                     getFile(request, file);
 
                     a.setPicture(picture);
@@ -163,7 +164,7 @@ public class ServiceAccount {
                     return a;
 
                 } catch (Exception e) {
-                    response.sendError(HttpServletResponse.SC_FORBIDDEN);
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND);
                     return null;
                 }
 
