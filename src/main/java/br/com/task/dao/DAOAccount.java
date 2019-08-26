@@ -12,22 +12,22 @@ public class DAOAccount {
 
     public static void insert(Connection c, TOAccount t) throws Exception {
         StringBuilder s = new StringBuilder();
-        s.append(" insert into account(id, name, email, password, createdat, active) values ");
-        s.append(" (?, ?, ?, ?, now(), true) ");
-        Data.executeUpdate(c, s.toString(), t.getId(), t.getName(), t.getEmail(), t.getPassword());
+        s.append(" insert into account(id, name, email, password, createdat, active, picture) values ");
+        s.append(" (?, ?, ?, ?, now(), true, ?) ");
+        Data.executeUpdate(c, s.toString(), t.getId(), t.getName(), t.getEmail(), t.getPassword(), t.getPicture());
     }
 
     public static void update(Connection c, TOAccount t) throws Exception {
         StringBuilder s = new StringBuilder();
-        s.append(" update account set name = ?, email = ?, password = ? ");
+        s.append(" update account set name = ?, email = ?, password = ?, picture = ? ");
         s.append(" where id = ? ");
-        Data.executeUpdate(c, s.toString(), t.getName(), t.getEmail(), t.getPassword(), t.getId());
+        Data.executeUpdate(c, s.toString(), t.getName(), t.getEmail(), t.getPassword(), t.getPicture(), t.getId());
     }
 
     public static TOAccount getByToken(Connection c, String token) throws Exception {
 
         StringBuilder s = new StringBuilder();
-        s.append(" select id, name, email, password, token, createdat, active, expiredat from account ");
+        s.append(" select id, name, email, password, token, createdat, active, expiredat, picture from account ");
         s.append(" where ");
         s.append(" token = ? ");
         s.append(" and active ");
@@ -40,6 +40,7 @@ public class DAOAccount {
                 u.setName(rs.getString("name"));
                 u.setEmail(rs.getString("email"));
                 u.setToken(rs.getString("token"));
+                u.setPicture(rs.getString("picture"));
                 u.setActive(rs.getBoolean("active"));
                 u.setCreatedAt(rs.getTimestamp("createdat"));
                 u.setExpiredAt(rs.getTimestamp("expiredat"));
@@ -54,7 +55,7 @@ public class DAOAccount {
     public static TOAccount getByEmail(Connection c, TOAccount t) throws Exception {
 
         StringBuilder s = new StringBuilder();
-        s.append(" select id, name, email, password, token, createdat, active, expiredat from account ");
+        s.append(" select id, name, email, password, token, createdat, active, expiredat, picture from account ");
         s.append(" where ");
         s.append(" email = ? ");
         s.append(" and active ");
@@ -68,6 +69,7 @@ public class DAOAccount {
                 u.setEmail(rs.getString("email"));
                 u.setToken(rs.getString("token"));
                 u.setActive(rs.getBoolean("active"));
+                u.setPicture(rs.getString("picture"));
                 u.setCreatedAt(rs.getTimestamp("createdat"));
                 u.setExpiredAt(rs.getTimestamp("expiredat"));
                 return u;
@@ -81,7 +83,7 @@ public class DAOAccount {
     public static List<TOAccount> accounts(Connection c) throws Exception {
 
         StringBuilder s = new StringBuilder();
-        s.append(" select id, name, email, password, token, createdat, active, expiredat from account ");
+        s.append(" select id, name, email, password, token, createdat, active, expiredat, picture from account ");
         s.append(" where ");
         s.append(" active ");
         s.append(" order by name ");
@@ -97,6 +99,7 @@ public class DAOAccount {
                 u.setEmail(rs.getString("email"));
                 u.setToken(rs.getString("token"));
                 u.setActive(rs.getBoolean("active"));
+                u.setPicture(rs.getString("picture"));
                 u.setCreatedAt(rs.getTimestamp("createdat"));
                 l.add(u);
             }
@@ -110,7 +113,7 @@ public class DAOAccount {
     public static TOAccount auth(Connection c, TOAccount u) throws Exception {
 
         StringBuilder s = new StringBuilder();
-        s.append(" select id, name, email, password, token, createdat, active, expiredat from account ");
+        s.append(" select id, name, email, password, token, createdat, active, expiredat, picture from account ");
         s.append(" where ");
         s.append(" email = ? and password = ? ");
         s.append(" and active ");
@@ -124,6 +127,7 @@ public class DAOAccount {
                 u.setEmail(rs.getString("email"));
                 u.setToken(rs.getString("token"));
                 u.setActive(rs.getBoolean("active"));
+                u.setPicture(rs.getString("picture"));
                 u.setCreatedAt(rs.getTimestamp("createdat"));
                 return u;
             } else {

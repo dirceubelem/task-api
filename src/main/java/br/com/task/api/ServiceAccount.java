@@ -3,15 +3,23 @@ package br.com.task.api;
 import br.com.task.bo.BOAccount;
 import br.com.task.bo.BOTask;
 import br.com.task.fw.Cache;
+import br.com.task.fw.DateTime;
 import br.com.task.to.TOAccount;
 import br.com.task.to.TOTask;
 import com.sun.corba.se.impl.oa.toa.TOA;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.json.JSONObject;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
+import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 
 @Path("account")
@@ -123,6 +131,67 @@ public class ServiceAccount {
         } else {
             response.sendError(HttpServletResponse.SC_FORBIDDEN);
             return null;
+        }
+    }
+
+    @POST
+    @Path("photo")
+    @Produces("application/json;charset=UTF-8")
+    public TOAccount sendPhoto(@HeaderParam("token") String token) throws Exception {
+
+        if (BOAccount.isValid(token)) {
+
+            TOAccount a = BOAccount.me(token);
+
+            if (a != null) {
+
+                try {
+
+                    DateTime now = DateTime.now();
+
+                    String picture = a.getId() + "-" + now.toString("yyyyMMddHHmmss");
+
+                    String file = "/opt/tomcat/webapps/br.com.task.file/" + picture + ".png";
+                    getFile(request, file);
+
+                    a.setPicture(picture);
+
+                    BOAccount.update(a);
+
+                    a = BOAccount.renewToken(a, token);
+
+                    return a;
+
+                } catch (Exception e) {
+                    response.sendError(HttpServletResponse.SC_FORBIDDEN);
+                    return null;
+                }
+
+            } else {
+                response.sendError(HttpServletResponse.SC_FORBIDDEN);
+                return null;
+            }
+        } else {
+            response.sendError(HttpServletResponse.SC_FORBIDDEN);
+            return null;
+        }
+    }
+
+    protected void getFile(HttpServletRequest rq, String file)
+            throws ServletException, IOException, Exception {
+
+        int MB = 1024 * 1024 * 1000000;
+        FileItemFactory factory = new DiskFileItemFactory();
+        ServletFileUpload upload = new ServletFileUpload(factory);
+
+        upload.setSizeMax(MB);
+
+        List items = upload.parseRequest(rq);
+        Iterator iter = items.iterator();
+
+        while (iter.hasNext()) {
+            FileItem item = (FileItem) iter.next();
+            item.write(new java.io.File(file));
         }
     }
 
