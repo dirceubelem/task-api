@@ -11,10 +11,11 @@ public class TOAccount {
     private String email;
     private String password;
     private String token;
+    private String picture;
     private boolean active;
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone="GMT-3")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone = "GMT-3")
     private Timestamp createdAt;
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone="GMT-3")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone = "GMT-3")
     private Timestamp expiredAt;
 
     public String getId() {
@@ -79,5 +80,13 @@ public class TOAccount {
 
     public void setExpiredAt(Timestamp expiredAt) {
         this.expiredAt = expiredAt;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }
