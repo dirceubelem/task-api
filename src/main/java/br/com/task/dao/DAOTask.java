@@ -22,6 +22,15 @@ public class DAOTask {
 
     }
 
+    public static void delete(Connection c, TOTask p) throws Exception {
+
+        StringBuilder sql = new StringBuilder();
+        sql.append(" delete from task where id = ? ");
+
+        Data.executeUpdate(c, sql.toString(), p.getId());
+
+    }
+
     public static void update(Connection c, TOTask p) throws Exception {
 
         StringBuilder sql = new StringBuilder();
