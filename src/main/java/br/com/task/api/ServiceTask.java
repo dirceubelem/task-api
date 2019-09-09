@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
-import java.util.List;
 
 @Path("task")
 public class ServiceTask {
@@ -39,6 +38,22 @@ public class ServiceTask {
     public void update(@HeaderParam("token") String token, TOTask p) throws Exception {
         if (BOAccount.isValid(token)) {
             if (BOTask.update(p)) {
+                response.sendError(HttpServletResponse.SC_ACCEPTED);
+            } else {
+                response.sendError(HttpServletResponse.SC_NOT_FOUND);
+            }
+        } else {
+            response.sendError(HttpServletResponse.SC_FORBIDDEN);
+        }
+    }
+
+    @DELETE
+    @Consumes("application/json;charset=utf-8")
+    public void delete(@HeaderParam("token") String token, TOTask p) throws Exception {
+        if (BOAccount.isValid(token)) {
+            TOAccount account = BOAccount.me(token);
+
+            if (BOTask.delete(account, p)) {
                 response.sendError(HttpServletResponse.SC_ACCEPTED);
             } else {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);

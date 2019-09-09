@@ -39,6 +39,21 @@ public class BOTask {
         }
     }
 
+    public static boolean delete(TOAccount account, TOTask p) throws Exception {
+        try (Connection c = Data.openConnection()) {
+
+            TOTask t = DAOTask.get(c, p);
+
+            if (t != null && t.getIdAccountFrom().equals(account.getId())) {
+                DAOTask.delete(c, t);
+                return true;
+            } else {
+                return false;
+            }
+
+        }
+    }
+
     public static boolean update(TOTask t) throws Exception {
         try (Connection c = Data.openConnection()) {
 
