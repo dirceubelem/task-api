@@ -90,11 +90,6 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="1027" />
-  </component>
   <component name="ProjectId" id="1PylJBKuW475uuR6ayp96WIxu8x" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
@@ -341,6 +336,8 @@
       <workItem from="1565662166288" duration="10000" />
       <workItem from="1566249828610" duration="806000" />
       <workItem from="1566854144429" duration="1326000" />
+      <workItem from="1568051012348" duration="93000" />
+      <workItem from="1568051210983" duration="170000" />
     </task>
     <servers />
   </component>
@@ -361,7 +358,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
