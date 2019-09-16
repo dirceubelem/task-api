@@ -31,6 +31,7 @@ public class ApplicationConfig extends Application {
         resources.add(ServiceProject.class);
         resources.add(ServiceTask.class);
         resources.add(ServiceVersion.class);
+        resources.add(ServiceDatabase.class);
 
     }
 
