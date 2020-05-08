@@ -1,6 +1,6 @@
 # task-api
 
-<strong>URL: https://api.fluo.site</strong>
+<strong>URL: https://api.fluo.work</strong>
 <br/>
 
 <h1>Autenticação</h1>
