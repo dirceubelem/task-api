@@ -32,7 +32,10 @@ Header:<br/>
 Content-Type: application-json; charset=utf-8<br/>
 <br/>
 Body<br/>
-{"name":"Fulano","email": "user@user.com", "password": "pass"}<br/><br/>
+
+```json 
+{"name":"Fulano","email": "user@user.com", "password": "pass"}
+```
 
 <h1>Esqueci minha senha</h1>
 <br/>
