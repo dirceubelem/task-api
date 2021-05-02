@@ -41,10 +41,10 @@ public class BOAccount {
     }
 
     public static TOAccount forgot(TOAccount u) throws Exception {
-        try (Connection c = Data.openConnection()) {
-
-            TOAccount t = DAOAccount.getByEmail(c, u);
-            if (t != null) {
+//        try (Connection c = Data.openConnection()) {
+//
+//            TOAccount t = DAOAccount.getByEmail(c, u);
+//            if (t != null) {
 
                 String novaSenha = Guid.getString().substring(0, 8);
 
@@ -56,13 +56,15 @@ public class BOAccount {
                 Email email = new Email("Esqueci minha senha - Fluo", message.toString(), u.getEmail());
                 email.start();
 
-                t.setPassword(Encrypt.sha1(novaSenha));
-                DAOAccount.update(c, t);
+                return u;
 
-            }
-            return t;
-
-        }
+//                t.setPassword(Encrypt.sha1(novaSenha));
+//                DAOAccount.update(c, t);
+//
+//            }
+//            return t;
+//
+//        }
     }
 
     public static void update(TOAccount u) throws Exception {

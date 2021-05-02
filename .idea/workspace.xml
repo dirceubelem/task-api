@@ -5,15 +5,23 @@
       <artifact name="Gradle : br.com.task.api : br.com.task.api.war (exploded)" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bf2f451d-777b-4995-a8f1-23817b188744" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/api/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/api/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/bo/BOAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/bo/BOAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/taskapi.paw" beforeDir="false" afterPath="$PROJECT_DIR$/taskapi.paw" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,14 +102,27 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558573482890" />
-    <property name="javascript.nodejs.core.library.configured.version" value="8.11.2" />
+    <property name="javascript.nodejs.core.library.configured.version" value="15.7.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="15.0.1" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -117,18 +138,6 @@
       <recent name="$PROJECT_DIR$" />
       <recent name="C:\Users\dirceu\Documents\backend\br.com.task.api\src\main\java\br\com\task\fw" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet">
@@ -160,7 +169,6 @@
       </method>
     </configuration>
     <configuration name="Api" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.38" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Gradle : br.com.task.api : br.com.task.api.war (exploded)">
@@ -342,7 +350,13 @@
       <workItem from="1568051012348" duration="93000" />
       <workItem from="1568051210983" duration="170000" />
       <workItem from="1568065398895" duration="783000" />
-      <workItem from="1568664913758" duration="299000" />
+      <workItem from="1568664913758" duration="456000" />
+      <workItem from="1571085288022" duration="458000" />
+      <workItem from="1571147744343" duration="78000" />
+      <workItem from="1588972351923" duration="2285000" />
+      <workItem from="1590787199296" duration="782000" />
+      <workItem from="1590853595769" duration="19000" />
+      <workItem from="1619992195859" duration="41000" />
     </task>
     <servers />
   </component>
@@ -356,30 +370,139 @@
     </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="511" y="146" key="#Api" timestamp="1588974080181">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="511" y="146" key="#Api/0.23.1680.1027@0.23.1680.1027" timestamp="1588974080181" />
+    <state x="618" y="421" key="#Tomcat_Server" timestamp="1588974077107">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="618" y="421" key="#Tomcat_Server/0.23.1680.1027@0.23.1680.1027" timestamp="1588974077107" />
+    <state width="1126" height="424" key="GridCell.Tab.0.bottom" timestamp="1590789493912">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.0.bottom/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493912" />
+    <state width="1126" height="424" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450074" />
+    <state width="1126" height="424" key="GridCell.Tab.0.center" timestamp="1590789493912">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.0.center/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493912" />
+    <state width="1126" height="424" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450072" />
+    <state width="1126" height="424" key="GridCell.Tab.0.left" timestamp="1590789493912">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.0.left/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493912" />
+    <state width="1126" height="424" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450072" />
+    <state width="1126" height="424" key="GridCell.Tab.0.right" timestamp="1590789493912">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.0.right/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493912" />
+    <state width="1126" height="424" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450073" />
+    <state width="1126" height="424" key="GridCell.Tab.1.bottom" timestamp="1590789493914">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.1.bottom/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493914" />
+    <state width="1126" height="424" key="GridCell.Tab.1.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450075" />
+    <state width="1126" height="424" key="GridCell.Tab.1.center" timestamp="1590789493913">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.1.center/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493913" />
+    <state width="1126" height="424" key="GridCell.Tab.1.center/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450075" />
+    <state width="1126" height="424" key="GridCell.Tab.1.left" timestamp="1590789493912">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.1.left/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493912" />
+    <state width="1126" height="424" key="GridCell.Tab.1.left/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450074" />
+    <state width="1126" height="424" key="GridCell.Tab.1.right" timestamp="1590789493913">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.1.right/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493913" />
+    <state width="1126" height="424" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450075" />
+    <state width="1126" height="424" key="GridCell.Tab.2.bottom" timestamp="1590789493915">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.2.bottom/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493915" />
+    <state width="1126" height="424" key="GridCell.Tab.2.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450077" />
+    <state width="1126" height="424" key="GridCell.Tab.2.center" timestamp="1590789493915">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.2.center/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493915" />
+    <state width="1126" height="424" key="GridCell.Tab.2.center/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450076" />
+    <state width="1126" height="424" key="GridCell.Tab.2.left" timestamp="1590789493914">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.2.left/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493914" />
+    <state width="1126" height="424" key="GridCell.Tab.2.left/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450076" />
+    <state width="1126" height="424" key="GridCell.Tab.2.right" timestamp="1590789493915">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.2.right/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493915" />
+    <state width="1126" height="424" key="GridCell.Tab.2.right/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450077" />
+    <state width="1126" height="424" key="GridCell.Tab.3.bottom" timestamp="1590789493918">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.3.bottom/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493918" />
+    <state width="1126" height="424" key="GridCell.Tab.3.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450078" />
+    <state width="1126" height="424" key="GridCell.Tab.3.center" timestamp="1590789493916">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.3.center/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493916" />
+    <state width="1126" height="424" key="GridCell.Tab.3.center/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450077" />
+    <state width="1126" height="424" key="GridCell.Tab.3.left" timestamp="1590789493916">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.3.left/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493916" />
+    <state width="1126" height="424" key="GridCell.Tab.3.left/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450077" />
+    <state width="1126" height="424" key="GridCell.Tab.3.right" timestamp="1590789493916">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.3.right/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493916" />
+    <state width="1126" height="424" key="GridCell.Tab.3.right/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450078" />
+    <state width="1126" height="424" key="GridCell.Tab.4.bottom" timestamp="1590789493919">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.4.bottom/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493919" />
+    <state width="1126" height="424" key="GridCell.Tab.4.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450079" />
+    <state width="1126" height="424" key="GridCell.Tab.4.center" timestamp="1590789493919">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.4.center/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493919" />
+    <state width="1126" height="424" key="GridCell.Tab.4.center/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450078" />
+    <state width="1126" height="424" key="GridCell.Tab.4.left" timestamp="1590789493918">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.4.left/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493918" />
+    <state width="1126" height="424" key="GridCell.Tab.4.left/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450078" />
+    <state width="1126" height="424" key="GridCell.Tab.4.right" timestamp="1590789493919">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1126" height="424" key="GridCell.Tab.4.right/0.23.1680.1027/-430.-1417.2560.1417@0.23.1680.1027" timestamp="1590789493919" />
+    <state width="1126" height="424" key="GridCell.Tab.4.right/0.23.1680.1027@0.23.1680.1027" timestamp="1590787450078" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOAccount.java</url>
-          <line>89</line>
+          <line>91</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -391,6 +514,36 @@
           <url>file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOTask.java</url>
           <line>64</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/task/fw/Email.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOAccount.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/task/fw/Email.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceAccount.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOAccount.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceAccount.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
