@@ -151,7 +151,8 @@ token: [USER TOKEN]
 ##### GET
 project/{id do projeto}/tasks
 
-####Header:
+#### Header:
+
 ```
 Content-Type: application-json; charset=utf-8
 token: [USER TOKEN]
