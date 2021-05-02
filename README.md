@@ -14,9 +14,8 @@ Accept: application-json; charset=utf-8<br/>
 Body<br/>
 
 ```json 
-{"email": "user@user.com", "password": "pass"}<br/>
+{"email": "user@user.com", "password": "pass"}
 ```
-<br/>
 <br/>
 
 <h1>Dados do Usuário logado</h1>
@@ -50,7 +49,7 @@ Content-Type: application-json; charset=utf-8<br/>
 Body<br/>
 
 ```json 
-{"email": "user@user.com"}<br/>
+{"email": "user@user.com"}
 ```
 
 <h1>Novo Projeto</h1>
@@ -63,7 +62,7 @@ token: [USER TOKEN]<br/><br/>
 Body<br/>
 
 ```json 
-{"name": "NOME DO PROJETO"}<br/>
+{"name": "NOME DO PROJETO"}
 ```
 
 <h1>Lista de Projetos</h1>
@@ -92,7 +91,7 @@ token: [USER TOKEN]<br/><br/>
 Body<br/>
 
 ```json 
-{"id": "ID DO PROJETO", "name": "NOME DO PROJETO", "active": true}<br/>
+{"id": "ID DO PROJETO", "name": "NOME DO PROJETO", "active": true}
 ```
 
 <h1>Nova Tarefa</h1>
@@ -105,7 +104,7 @@ token: [USER TOKEN]<br/><br/>
 Body<br/>
 
 ```json 
-{"name":"nome","idProject":"id do projeto","idAccountTo":"id da conta","description":"descricao da tarefa","tags":"tags"}<br/>
+{"name":"nome","idProject":"id do projeto","idAccountTo":"id da conta","description":"descricao da tarefa","tags":"tags"}
 ```
 
 <h1>Tarefas de Um Projeto</h1>
@@ -126,5 +125,5 @@ token: [USER TOKEN]<br/><br/>
 Body<br/>
 
 ```json 
-{"id": "813704983274091827", "name":"nome","idProject":"id do projeto","idAccountTo":"id da conta","description":"descricao da tarefa","tags":"tags"}<br/>
+{"id": "813704983274091827", "name":"nome","idProject":"id do projeto","idAccountTo":"id da conta","description":"descricao da tarefa","tags":"tags"}
 ```
