@@ -1,128 +1,172 @@
 # task-api
 
-<strong>URL: https://api.fluo.work/v1/</strong>
-<br/>
+URL: https://api.fluo.work/v1/
 
-<h1>Autenticação</h1>
-<br/>
-<strong>POST</strong><br/>
-account/auth<br/>
-Header:<br/>
-Content-Type: application-json; charset=utf-8<br/>
-Accept: application-json; charset=utf-8<br/>
-<br/>
-Body<br/>
+
+## Autenticação
+##### POST
+account/auth
+#### Header:
+```
+Content-Type: application-json; charset=utf-8
+Accept: application-json; charset=utf-8
+```
+
+### Request
+#### Body
 
 ```json 
 {"email": "user@user.com", "password": "pass"}
 ```
-<br/>
 
-<h1>Dados do Usuário logado</h1>
-<br/>
-<strong>GET</strong><br/>
-account/me<br/>
-Header:<br/>
-Content-Type: application-json; charset=utf-8<br/>
-token: [USER TOKEN]<br/><br/>
+#### Response
+    
+```json
+{"id":"4sdokkc9bs56f1f4nh5s6l","name":"Dirceu Belém","email":"dirceu@fingermidia.com","password":null,"token":"6ph38tb2im9em1f4nh6441","picture":null,"active":true,"createdAt":"02/05/2021 18:54:01","expiredAt":"02/05/2021 18:59:09"}
+```
 
-<h1>Cadastro de usuário</h1>
-<br/>
-<strong>POST</strong><br/>
-account<br/>
-Header:<br/>
-Content-Type: application-json; charset=utf-8<br/>
-<br/>
-Body<br/>
+## Dados do Usuário logado
+
+##### GET
+account/me
+
+#### Header:
+```
+Content-Type: application-json; charset=utf-8
+Accept: application-json; charset=utf-8
+```
+
+token: [USER TOKEN]
+
+#### Response
+```json
+{"id":"4sdokkc9bs56f1f4nh5s6l","name":"Dirceu Belém","email":"dirceu@fingermidia.com","password":null,"token":"6ph38tb2im9em1f4nh6441","picture":null,"active":true,"createdAt":"02/05/2021 18:54:01","expiredAt":"02/05/2021 18:59:09"}
+```
+
+## Cadastro de usuário
+
+##### POST
+account
+
+#### Header:
+```
+Content-Type: application-json; charset=utf-8
+```
+
+### Request
+#### Body
 
 ```json 
 {"name":"Fulano","email": "user@user.com", "password": "pass"}
 ```
+### Response
+```json
+{"id":"4sdokkc9bs56f1f4nh5s6l"}
+```
 
-<h1>Esqueci minha senha</h1>
-<br/>
-<strong>POST</strong><br/>
-account/forgot<br/>
-Header:<br/>
-Content-Type: application-json; charset=utf-8<br/>
-<br/>
-Body<br/>
+## Esqueci minha senha
+
+##### POST
+account/forgot
+Header:
+```
+Content-Type: application-json; charset=utf-8
+```
+
+Body
 
 ```json 
 {"email": "user@user.com"}
 ```
 
-<h1>Novo Projeto</h1>
-<br/>
-<strong>POST</strong><br/>
-project<br/>
-Header:<br/>
-Content-Type: application-json; charset=utf-8<br/>
-token: [USER TOKEN]<br/><br/>
-Body<br/>
+## Novo Projeto
+
+##### POST
+project
+#### Header:
+```
+Content-Type: application-json; charset=utf-8
+token: [USER TOKEN]
+```
+
+#### Body
 
 ```json 
 {"name": "NOME DO PROJETO"}
 ```
 
-<h1>Lista de Projetos</h1>
-<br/>
-<strong>GET</strong><br/>
-project<br/>
-Header:<br/>
-Content-Type: application-json; charset=utf-8<br/>
-token: [USER TOKEN]<br/><br/>
+## Lista de Projetos
 
-<h1>Obter um Projeto</h1>
-<br/>
-<strong>GET</strong><br/>
-project/{ID DO PROJETO}<br/>
-Header:<br/>
-Content-Type: application-json; charset=utf-8<br/>
-token: [USER TOKEN]<br/><br/>
+##### GET
+project
+#### Header:
+```
+Content-Type: application-json; charset=utf-8
+token: [USER TOKEN]
+```
 
-<h1>Alterar um Projeto</h1>
-<br/>
-<strong>PUT</strong><br/>
-project<br/>
-Header:<br/>
-Content-Type: application-json; charset=utf-8<br/>
-token: [USER TOKEN]<br/><br/>
-Body<br/>
+## Obter um Projeto
+
+##### GET
+project/{ID DO PROJETO}
+
+#### Header:
+```
+Content-Type: application-json; charset=utf-8
+token: [USER TOKEN]
+```
+
+## Alterar um Projeto
+
+##### PUT
+project
+#### Header:
+```
+Content-Type: application-json; charset=utf-8
+token: [USER TOKEN]
+```
+####Body
 
 ```json 
 {"id": "ID DO PROJETO", "name": "NOME DO PROJETO", "active": true}
 ```
 
-<h1>Nova Tarefa</h1>
-<br/>
-<strong>POST</strong><br/>
-task<br/>
-Header:<br/>
-Content-Type: application-json; charset=utf-8<br/>
-token: [USER TOKEN]<br/><br/>
-Body<br/>
+## Nova Tarefa
+
+##### POST
+task
+#### Header:
+```
+Content-Type: application-json; charset=utf-8
+token: [USER TOKEN]
+```
+#### Body
 
 ```json 
 {"name":"nome","idProject":"id do projeto","idAccountTo":"id da conta","description":"descricao da tarefa","tags":"tags"}
 ```
 
-<h1>Tarefas de Um Projeto</h1>
-<br/>
-<strong>GET</strong><br/>
-project/{id do projeto}/tasks<br/>
-Header:<br/>
-Content-Type: application-json; charset=utf-8<br/>
-token: [USER TOKEN]<br/><br/>
+## Tarefas de Um Projeto
 
-<h1>Alterar Tarefa</h1>
-<br/>
-<strong>PUT</strong><br/>
-task<br/>
-Header:<br/>
-Content-Type: application-json; charset=utf-8<br/>
-token: [USER TOKEN]<br/><br/>
-Body<br/>
+##### GET
+project/{id do projeto}/tasks
+
+####Header:
+```
+Content-Type: application-json; charset=utf-8
+token: [USER TOKEN]
+```
+## Alterar Tarefa
+
+##### PUT
+task
+
+#### Header:
+```
+Content-Type: application-json; charset=utf-8
+token: [USER TOKEN]
+```
+#### Body
 
 ```json 
 {"id": "813704983274091827", "name":"nome","idProject":"id do projeto","idAccountTo":"id da conta","description":"descricao da tarefa","tags":"tags"}
