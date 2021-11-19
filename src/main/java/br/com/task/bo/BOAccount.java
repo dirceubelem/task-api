@@ -51,7 +51,7 @@ public class BOAccount {
                 StringBuilder message = new StringBuilder();
                 message.append("Olá ").append(u.getName()).append(",<br/><br/>");
                 message.append("Recebemos um pedido de nova senha .... ").append(novaSenha).append("<br/><br/>");
-                message.append("Equipe Fluo");
+                message.append("Obrigado");
 
                 EmailPostmark email = new EmailPostmark("Esqueci minha senha - Task", message.toString(), u.getEmail());
                 email.start();
@@ -89,10 +89,10 @@ public class BOAccount {
 
                 StringBuilder message = new StringBuilder();
                 message.append("Olá ").append(u.getName()).append(",<br/><br/>");
-                message.append("Seja bem vindo ao Fluo!<br/><br/>");
-                message.append("Equipe Fluo");
+                message.append("Seja bem vindo!<br/><br/>");
+                message.append("Obrigado");
 
-                EmailPostmark email = new EmailPostmark("Seja bem vindo ao Fluo", message.toString(), u.getEmail());
+                EmailPostmark email = new EmailPostmark("Seja bem vindo ao Task", message.toString(), u.getEmail());
                 email.start();
 
                 return u;
