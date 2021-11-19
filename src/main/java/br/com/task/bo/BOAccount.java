@@ -41,30 +41,28 @@ public class BOAccount {
     }
 
     public static TOAccount forgot(TOAccount u) throws Exception {
-//        try (Connection c = Data.openConnection()) {
-//
-//            TOAccount t = DAOAccount.getByEmail(c, u);
-//            if (t != null) {
+        try (Connection c = Data.openConnection()) {
+
+            TOAccount t = DAOAccount.getByEmail(c, u);
+            if (t != null) {
 
                 String novaSenha = Guid.getString().substring(0, 8);
 
                 StringBuilder message = new StringBuilder();
                 message.append("Olá ").append(u.getName()).append(",<br/><br/>");
                 message.append("Recebemos um pedido de nova senha .... ").append(novaSenha).append("<br/><br/>");
-                message.append("Equipe Fluo");
+                message.append("Obrigado");
 
-                Email email = new Email("Esqueci minha senha - Fluo", message.toString(), u.getEmail());
+                EmailPostmark email = new EmailPostmark("Esqueci minha senha - Task", message.toString(), u.getEmail());
                 email.start();
 
-                return u;
+                t.setPassword(Encrypt.sha1(novaSenha));
+                DAOAccount.update(c, t);
 
-//                t.setPassword(Encrypt.sha1(novaSenha));
-//                DAOAccount.update(c, t);
-//
-//            }
-//            return t;
-//
-//        }
+            }
+            return t;
+
+        }
     }
 
     public static void update(TOAccount u) throws Exception {
@@ -91,10 +89,10 @@ public class BOAccount {
 
                 StringBuilder message = new StringBuilder();
                 message.append("Olá ").append(u.getName()).append(",<br/><br/>");
-                message.append("Seja bem vindo ao Fluo!<br/><br/>");
-                message.append("Equipe Fluo");
+                message.append("Seja bem vindo!<br/><br/>");
+                message.append("Obrigado");
 
-                Email email = new Email("Seja bem vindo ao Fluo", message.toString(), u.getEmail());
+                EmailPostmark email = new EmailPostmark("Seja bem vindo ao Task", message.toString(), u.getEmail());
                 email.start();
 
                 return u;
