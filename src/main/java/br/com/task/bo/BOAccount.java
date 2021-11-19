@@ -49,8 +49,8 @@ public class BOAccount {
                 String novaSenha = Guid.getString().substring(0, 8);
 
                 StringBuilder message = new StringBuilder();
-                message.append("Olá ").append(u.getName()).append(",<br/><br/>");
-                message.append("Recebemos um pedido de nova senha .... ").append(novaSenha).append("<br/><br/>");
+                message.append("Olá ").append(t.getName()).append(",<br/><br/>");
+                message.append("Recebemos um pedido de nova senha .... <b>").append(novaSenha).append("</b><br/><br/>");
                 message.append("Obrigado");
 
                 EmailPostmark email = new EmailPostmark("Esqueci minha senha - Task", message.toString(), u.getEmail());
