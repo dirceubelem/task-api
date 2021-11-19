@@ -58,7 +58,7 @@ public class EmailPostmark extends Thread {
         headers.put("X-Postmark-Server-Token", ConfigParam.getConfigParam().getProperties("TOKEN"));
 
         JSONObject j = new JSONObject();
-        j.put("From", "no-reply@soclicar.com.br");
+        j.put("From", "no-reply@fluo.com.br");
         j.put("To", sendTo);
         j.put("Subject", subject);
         j.put("HtmlBody", message);
