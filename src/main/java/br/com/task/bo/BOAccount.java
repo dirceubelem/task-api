@@ -53,7 +53,7 @@ public class BOAccount {
                 message.append("Recebemos um pedido de nova senha .... ").append(novaSenha).append("<br/><br/>");
                 message.append("Equipe Fluo");
 
-                Email email = new Email("Esqueci minha senha - Task", message.toString(), u.getEmail());
+                EmailPostmark email = new EmailPostmark("Esqueci minha senha - Task", message.toString(), u.getEmail());
                 email.start();
 
                 t.setPassword(Encrypt.sha1(novaSenha));
@@ -92,7 +92,7 @@ public class BOAccount {
                 message.append("Seja bem vindo ao Fluo!<br/><br/>");
                 message.append("Equipe Fluo");
 
-                Email email = new Email("Seja bem vindo ao Fluo", message.toString(), u.getEmail());
+                EmailPostmark email = new EmailPostmark("Seja bem vindo ao Fluo", message.toString(), u.getEmail());
                 email.start();
 
                 return u;

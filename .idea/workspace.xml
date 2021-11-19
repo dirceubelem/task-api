@@ -10,7 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf2f451d-777b-4995-a8f1-23817b188744" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/taskapi.paw" beforeDir="false" afterPath="$PROJECT_DIR$/taskapi.paw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/task/fw/ConfigParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/task/fw/EmailPostmark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/task/fw/integration/Data.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/task/fw/integration/Integration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/task/fw/integration/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/task/fw/integration/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/bo/BOAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/task/bo/BOAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/task/fw/Email.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +117,7 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558573482890" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.7.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="15.0.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/br/com/task/fw" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -123,10 +134,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/br/com/task/fw" />
       <recent name="H:\task-api\src\main\java\br\com\task\fw" />
       <recent name="$PROJECT_DIR$/gradle/wrapper" />
       <recent name="$PROJECT_DIR$" />
       <recent name="C:\Users\dirceu\Documents\backend\br.com.task.api\src\main\java\br\com\task\fw" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.task.fw" />
     </key>
   </component>
   <component name="RunManager">
@@ -349,6 +364,7 @@
       <workItem from="1590853595769" duration="19000" />
       <workItem from="1619992195859" duration="708000" />
       <workItem from="1621951912008" duration="379000" />
+      <workItem from="1637327843958" duration="500000" />
     </task>
     <servers />
   </component>
@@ -398,19 +414,9 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/task/fw/Email.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/task/bo/BOAccount.java</url>
           <line>48</line>
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/task/fw/Email.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/task/api/ServiceAccount.java</url>
